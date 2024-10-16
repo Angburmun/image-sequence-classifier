@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict with CNN-LSTM Model</h1>
+        <form id="prediction-form" enctype="multipart/form-data">
+            <label for="input-data">Upload 24 Images:</label>
+            <input type="file" id="input-data" name="images" accept="image/*" multiple>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            const files = document.getElementById('input-data').files;
+            if (files.length !== 24) {
+                alert('Please upload exactly 24 images.');
+                return;
+            }
+            for (let i = 0; i < files.length; i++) {
+                formData.append('images', files[i]);
+            }
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    document.getElementById('result').innerText = 'Predicted Class: ' + data.predicted_class;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
