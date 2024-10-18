@@ -35,3 +35,14 @@ Durante la realización de este hito se ha creado el repositorio de GitHub para 
   ![image](https://github.com/user-attachments/assets/c3fdb4e9-1028-4068-9f1b-2c3102b3d0b4)
 
   Et voilá! El repositorio está listo y con todos los archivos para estar trabajando. Ahora lo único que queda es redactar este Readme.md (que estoy haciendo ahora mismo, así que esto es una metaescritura). No adjunto capturas de esta parte porque ya se está viendo el resultado :-).
+
+  ### Disposición de los archivos de la práctica.
+
+  Ya que estamos, aquí debajo viene una explicación de qué son cada uno de los archivos que se encuentran en este repositorio:
+   - **README.md** es este archivo, con toda la información acerca del repositorio.
+   - **LICENSE** es la licencia usada para este repositorio. Creative Commons, porque la he utilizado con anterioridad y satisface todas las necesidades para este trabajo.
+   - Los archivos que comienzan con **LSTM** y terminados en **.h5** o **.keras** son los propios de la red neuronal. Es el clasificador de nuestra aplicación.
+   - **.gitignore** le dice a *git* los archivos que no deben estar en el repositorio. Tal y como está explicado en la documentación de la práctica, esto veta archivos binarios o derivados de otros archivos de este repositorio.
+   - **app.py** tiene todo el código de la aplicación.
+   - La carpeta **templates** tiene el FrontEnd de la aplicación, en este caso una aplicación web.
+   - La carpeta **static** tiene la hoja de estilos de la aplicación web.
