@@ -7,7 +7,7 @@ import io
 app = Flask(__name__)
 
 # Cargar el modelo entrenado
-model = load_model('LSTM.h5')
+model = load_model('models/LSTM.keras')
 
 @app.route('/')
 def index():
