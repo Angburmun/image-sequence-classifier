@@ -6,11 +6,11 @@ Aplicación utilizada para el proyecto 'Automatic detection of rodent behavior'.
 
 ## Hito 1: 
 
-<p align="justify">En el siguiente enlace se puede consultar la documentación del [Hito 1](https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito1.md), en el que se detalla cómo se ha creado el repositorio de GitHub para esta aplicación.</p>
+En el siguiente enlace se puede consultar la documentación del [Hito 1](https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito1.md), en el que se detalla cómo se ha creado el repositorio de GitHub para esta aplicación.
 
 ## Hito 2:
 
-<p align="justify">En el siguiente enlace se puede consultar la documentación del [Hito 2](https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito2.md), en el que se detalla la realización de los tests y la infraestructura virtual de la aplicación.</p>
+En el siguiente enlace se puede consultar la documentación del [Hito 2](https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito2.md), en el que se detalla la realización de los tests y la infraestructura virtual de la aplicación.
 
 ## Disposición de los archivos de la práctica.
 
