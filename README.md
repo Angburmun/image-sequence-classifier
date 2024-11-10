@@ -12,7 +12,7 @@ Aplicación utilizada para el proyecto 'Automatic detection of rodent behavior'.
 
 <p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito2.md">Hito 2</a>, en el que se detalla la realización de los tests y la infraestructura virtual de la aplicación.</p>
 
-## Disposición de los archivos de la práctica.
+## 📂 Disposición de los archivos de la práctica 📂
 
   Aquí debajo viene una explicación de qué son cada uno de los archivos que se encuentran en este repositorio:
    - <p align="justify">**README.md** es este archivo, con toda la información acerca del repositorio.</p>
