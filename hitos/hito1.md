@@ -1,13 +1,13 @@
-## Hito 1: Configuración del repositorio.
+# Hito 1: Configuración del repositorio.
 
 <p align="justify">Durante la realización de este hito se ha creado el repositorio de GitHub para la aplicación sobre la que desarrollaremos las prácticas de Cloud Computing. La realización de este proceso no es algo trivial ni ha de darse por hecha, ya que lleva varios pasos como lo son la creación del repositorio, la configuración de la terminal para poder acceder al repositorio, y la adición de los archivos al mismo repositorio.</p>
 
-### Primer paso: *Creacción del repositorio.*
+## Primer paso: *Creacción del repositorio.*
   <p align="justify">Para esto debemos crear un repositorio nuevo dentro de nuestra cuenta de GitHub. Hay muchas formas de hacer esto, por ejemplo, se puede crear el repositorio en local y después sincronizarlo con la cuenta de GitHub. Para no complicarnos demasiado, primero voy a crear un repositorio vacío en GitHub, lo clonaré en mi PC y después añadiré los archivos con un commit. En esta immagen se puede ver el proceso:</p>
 
   ![image](https://github.com/user-attachments/assets/9af3546c-27c9-4d15-ab8c-c6204ad9ede3)
 
-### Segundo paso: *Configurar las claves SSH de nuestro ordenador.*
+## Segundo paso: *Configurar las claves SSH de nuestro ordenador.*
   <p align="justify">Como siguiente paso, para poder conectarnos a nuestro repositorio desde nuestro ordenador, GitHub nos pide que utilicemos claves públicas y privadas para proteger nuestra conexión. Para completar este paso primero tenemos que crear las claves y después tenemos que añadir la clave pública a nuestra cuenta de GitHub. Convenientemente, GitHub tiene un tutorial en el que se explica este proceso muy bien: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent.</p>
 
   Algunas capturas de pantalla de esta preparación en mi ordenador:
@@ -20,7 +20,7 @@
 
   Una vez está todo configurado, podemos pasar al siguiente paso.
 
-  ### Tercer paso: *Subir los archivos*.
+## Tercer paso: *Subir los archivos*.
   <p align="justify">Lo último que nos queda es clonar el repositorio en nuestro ordenador con un *git clone* (con la dirección que aparece en nuestra página del repositorio), copiar los archivos dentro del repositorio y hacer un *git push* con un *git commit* para subir todos los archivos al repositorio:</p>
 
   ![image](https://github.com/user-attachments/assets/88792f05-dc98-4393-b7dc-9c05e75af0c7)
