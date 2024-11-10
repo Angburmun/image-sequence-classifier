@@ -14,14 +14,14 @@ Aplicación utilizada para el proyecto 'Automatic detection of rodent behavior'.
 
 ## 📂 Disposición de los archivos de la práctica 📂
 
-  Aquí debajo viene una explicación de qué son cada uno de los archivos que se encuentran en este repositorio:
-   - <p align="justify">**README.md** es este archivo, con toda la información acerca del repositorio.</p>
-   - <p align="justify">**LICENSE** es la licencia usada para este repositorio. Creative Commons.</p>
-   - <p align="justify">Los archivos que comienzan con **LSTM** y terminados en **.h5** o **.keras** son los propios de la red neuronal. Es el clasificador de nuestra aplicación.</p>
-   - <p align="justify">**.gitignore** le dice a *git* los archivos que no deben estar en el repositorio. Tal y como está explicado en la documentación de la práctica, esto veta archivos binarios o derivados de otros archivos de este repositorio.</p>
-   - <p align="justify">**app.py** tiene todo el código de la aplicación.</p>
-   - <p align="justify">**test_app.py** contiene los tests de la aplicación.</p>
-   - <p align="justify">La carpeta **templates** cuenta con la interfaz html.</p>
-   - <p align="justify">La carpeta **static** tiene la hoja de estilos de la aplicación web.</p>
-   - <p align="justify">La carpeta **js** contiene el FrontEnd de la aplicación.</p>
-   - <p align="justify">La carpeta **hitos** contiene la información de cada uno de los hitos completados para la asingatura Cloud Computing 2024-25. Se puede acceder a esos documentos desde este README, a través de los enlaces individuales que se pueden encontrar en cada uno de los apartados de los hitos individuales.</p>
+Aquí debajo viene una explicación de qué son cada uno de los archivos que se encuentran en este repositorio:
+   - <p align="justify"><b>README.md</b> es este archivo, con toda la información acerca del repositorio.</p>
+   - <p align="justify"><b>LICENSE</b> es la licencia usada para este repositorio. Creative Commons.</p>
+   - <p align="justify">Los archivos que comienzan con <b>LSTM</b> y terminados en <b>.h5</b> o <b>.keras</b> son los propios de la red neuronal. Es el clasificador de nuestra aplicación.</p>
+   - <p align="justify"><b>.gitignore</b> le dice a <i>git</i> los archivos que no deben estar en el repositorio. Tal y como está explicado en la documentación de la práctica, esto veta archivos binarios o derivados de otros archivos de este repositorio.</p>
+   - <p align="justify"><b>app.py</b> tiene todo el código de la aplicación.</p>
+   - <p align="justify"><b>test_app.py</b> contiene los tests de la aplicación.</p>
+   - <p align="justify">La carpeta <b>templates</b> cuenta con la interfaz html.</p>
+   - <p align="justify">La carpeta <b>static</b> tiene la hoja de estilos de la aplicación web.</p>
+   - <p align="justify">La carpeta <b>js</b> contiene el FrontEnd de la aplicación.</p>
+   - <p align="justify">La carpeta <b>hitos</b> contiene la información de cada uno de los hitos completados para la asignatura Cloud Computing 2024-25. Se puede acceder a esos documentos desde este README, a través de los enlaces individuales que se pueden encontrar en cada uno de los apartados de los hitos individuales.</p>
