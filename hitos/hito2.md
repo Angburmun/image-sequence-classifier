@@ -1,30 +1,37 @@
-## Hito 1: Configuración del repositorio.
+# Hito 2: Integración Continua.
 
-<p align="justify">Durante la realización de este hito se ha creado el repositorio de GitHub para la aplicación sobre la que desarrollaremos las prácticas de Cloud Computing. La realización de este proceso no es algo trivial ni ha de darse por hecha, ya que lleva varios pasos como lo son la creación del repositorio, la configuración de la terminal para poder acceder al repositorio, y la adición de los archivos al mismo repositorio.</p>
+<p align="justify">En este hito se propone crear los tests que comprobarán el correcto funcionamiento de nuestra aplicación, además de su incorporación en una plataforma de integración continua como es GitHub Actions.</p>
 
-### Primer paso: *Creacción del repositorio.*
-  <p align="justify">Para esto debemos crear un repositorio nuevo dentro de nuestra cuenta de GitHub. Hay muchas formas de hacer esto, por ejemplo, se puede crear el repositorio en local y después sincronizarlo con la cuenta de GitHub. Para no complicarnos demasiado, primero voy a crear un repositorio vacío en GitHub, lo clonaré en mi PC y después añadiré los archivos con un commit. En esta immagen se puede ver el proceso:</p>
+## Elección de la librería de tests
+<p align="justify">Como primer paso para desarrollar esta práctica, debemos elegir una librería de testing que funcione con el lenguaje de programación de nuestra aplicación. En mi caso, al estar utilizando <em>Python</em>, he decidido utilizar la librería <em>Pytest</em> - también por recomendación de la profesora.</p>
+<p align="justify">La documentación de esta librería se puede consultar en el enlace <em><a href="https://docs.pytest.org/">pytest documentation</a></em>.</p>
 
-  ![image](https://github.com/user-attachments/assets/9af3546c-27c9-4d15-ab8c-c6204ad9ede3)
+## Desarrollo de los tests
+<p align="justify">Siguiendo las buenas prácticas de programación que se nos han enseñado a lo largo del Grado en Ingeniería Informática, hay varias cosas a tener en cuenta al diseñar tests para nuestra aplicación. Aparte de las técnicas de programación limpia, que ya las damos por supuestas, es importante realizar pruebas de todos los aspectos posibles de nuestra aplicación. Esto nos permitirá tener plena confianza en que el código está funcionando correctamente.</p>
 
-### Segundo paso: *Configurar las claves SSH de nuestro ordenador.*
-  <p align="justify">Como siguiente paso, para poder conectarnos a nuestro repositorio desde nuestro ordenador, GitHub nos pide que utilicemos claves públicas y privadas para proteger nuestra conexión. Para completar este paso primero tenemos que crear las claves y después tenemos que añadir la clave pública a nuestra cuenta de GitHub. Convenientemente, GitHub tiene un tutorial en el que se explica este proceso muy bien: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent.</p>
+<p align="justify">Recordemos el funcionamiento de la aplicación. Toma una secuencia de 24 imágenes y debe devolver una clasificación para esa secuencia. En caso de no recibir el número adecuado, debe devolver un error. Los detalles de la implementación se pueden ver en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/app.py">app.py</a></em>. Las pruebas que tienen sentido, entonces para nuestra aplicación son las siguientes:</p>
 
-  Algunas capturas de pantalla de esta preparación en mi ordenador:
+<ul>
+  <li>Archivos estáticos</li>
+  <li>Ruta principal e <em>index.html</em></li>
+  <li>Predicción de imágenes</li>
+  <ul>
+    <li>Ninguna imagen</li>
+    <li>Pocas imágenes</li>
+    <li>Demasiadas imágenes</li>
+    <li>Imágenes corruptas</li>
+    <li>Imágenes demasiado grandes</li>
+    <li>Imágenes demasiado pequeñas</li>
+  </ul>
+</ul>
 
-  ![image](https://github.com/user-attachments/assets/c2371264-a954-423a-9408-fb10cfc8af0c)
+<p align="justify">Los detalles de qué tests se han implementado y cómo se han implementado se pueden ver en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/test_app.py">test_app.py</a></em>. Básicamente <em>pytest</em> crea un pequeño entorno con la aplicación, y prueba de forma independiente los diferentes parámetros que le pedimos. El resultado de la ejecución en local es el siguiente:</p>
 
-  <p align="justify">Como buena clave pública, lo único que se puede hacer es darme acceso a un repositorio con ella, por eso la publico aquí ;). También hay que configurar el email y el usuario para poder hacer *commits*. Convenientemente, GitHub te avisa si no están configurados, y se puede hacer con los siguientes comandos:</p>
+![image](https://github.com/user-attachments/assets/e5897579-c667-40b4-a282-d683070b7969)
 
-  ![image](https://github.com/user-attachments/assets/1871d9d1-3251-415c-9c73-a60ea9192130)
+## Integración continua.
+<p align="justify">Una vez nos hemos asegurado de que todo funciona correctamente en local, es hora de actualizar nuestro repositorio y configurar el entorno de integración continua. En mi caso he decidido utilizar GitHub Actions porque es muy fácilmente integrable con nuestro repositorio de GitHub. Además de que también contiene muchos entornos <em>Python</em> por defecto que podemos utilizar directamente <em>out of the box</em>.</p>
 
-  Una vez está todo configurado, podemos pasar al siguiente paso.
+![image](https://github.com/user-attachments/assets/1f1b0138-7cb7-41ad-9871-3c83825d1bad)
 
-  ### Tercer paso: *Subir los archivos*.
-  <p align="justify">Lo último que nos queda es clonar el repositorio en nuestro ordenador con un *git clone* (con la dirección que aparece en nuestra página del repositorio), copiar los archivos dentro del repositorio y hacer un *git push* con un *git commit* para subir todos los archivos al repositorio:</p>
-
-  ![image](https://github.com/user-attachments/assets/88792f05-dc98-4393-b7dc-9c05e75af0c7)
-
-  ![image](https://github.com/user-attachments/assets/c3fdb4e9-1028-4068-9f1b-2c3102b3d0b4)
-
-  <p align="justify">Et voilá! El repositorio está listo y con todos los archivos para estar trabajando. Ahora lo único que queda es redactar este Readme.md (que estoy haciendo ahora mismo, así que esto es una metaescritura). No adjunto capturas de esta parte porque ya se está viendo el resultado :-).</p>
+<p align="justify"></p>
