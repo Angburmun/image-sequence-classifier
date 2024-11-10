@@ -29,7 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install keras
         pip install tensorflow
-        apt install pytest
+        sudo apt-get install pytest
     - name: Execute tests
       run: pytest
 
