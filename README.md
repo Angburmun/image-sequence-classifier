@@ -4,11 +4,11 @@ Aplicación utilizada para el proyecto 'Automatic detection of rodent behavior'.
 
 <p align="justify">El objetivo de este proyecto es desplegar la aplicación para que pueda ser accesible por usuarios en remoto. Esta aplicación cuenta con una interfaz sencilla, a la que se envían 24 imágenes y la salida es una clasificación dada por el modelo de Inteligencia Artificial mencionado con anterioridad.</p>
 
-## Hito 1: 
+## 🔧 Hito 1: Configuración del repositorio 🔧
 
 <p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito1.md">Hito 1</a>, en el que se detalla cómo se ha creado el repositorio de GitHub para esta aplicación.</p>
 
-## Hito 2:
+## 🕐 Hito 2: Integración continua 🕐
 
 <p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito2.md">Hito 2</a>, en el que se detalla la realización de los tests y la infraestructura virtual de la aplicación.</p>
 
