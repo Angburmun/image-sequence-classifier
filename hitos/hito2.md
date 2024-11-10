@@ -1,4 +1,4 @@
-# Hito 2: Integración Continua.
+# 🕐 Hito 2: Integración Continua 🕐
 
 <p align="justify">En este hito se propone crear los tests que comprobarán el correcto funcionamiento de nuestra aplicación, además de su incorporación en una plataforma de integración continua como es GitHub Actions.</p>
 
