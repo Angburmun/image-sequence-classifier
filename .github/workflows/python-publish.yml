@@ -30,10 +30,9 @@ jobs:
         pip install keras
         pip install tensorflow
         pip install flask
+        pip install PIL
         pip install pytest
         sudo apt install python3-pytest
     - name: Execute tests
       run: |
-        ls -la
-        pytest --version
         pytest
