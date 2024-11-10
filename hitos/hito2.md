@@ -29,9 +29,17 @@
 
 ![image](https://github.com/user-attachments/assets/e5897579-c667-40b4-a282-d683070b7969)
 
-## Integración continua.
-<p align="justify">Una vez nos hemos asegurado de que todo funciona correctamente en local, es hora de actualizar nuestro repositorio y configurar el entorno de integración continua. En mi caso he decidido utilizar GitHub Actions porque es muy fácilmente integrable con nuestro repositorio de GitHub. Además de que también contiene muchos entornos <em>Python</em> por defecto que podemos utilizar directamente <em>out of the box</em>.</p>
+## Integración continua
+<p align="justify">Una vez nos hemos asegurado de que todo funciona correctamente en local, es hora de actualizar nuestro repositorio y configurar el entorno de integración continua. En mi caso he decidido utilizar GitHub Actions porque es muy fácilmente integrable con nuestro repositorio de GitHub. Además de que también contiene muchos entornos <em>Python</em> por defecto que podemos utilizar directamente <em>out of the box</em> con pocos cambios.</p>
 
 ![image](https://github.com/user-attachments/assets/1f1b0138-7cb7-41ad-9871-3c83825d1bad)
 
-<p align="justify"></p>
+<p align="justify">En mi caso he uno de los contenedores que había para tenerlo de plantilla, junto con el ejemplo existente en la <em><a href="https://docs.github.com/es/actions/writing-workflows/quickstart">Guía de Inicio Rápido de GitHub Actions</a></em>, para escribir mi contenedor. Una vez hecho esto, y tras entender cómo funcionan los archivos yml, ya se pueden escribir los comandos que queremos que se ejecuten en nuestro contenedor. Se dividen en dos partes principales: las dependencias y el comando para pasar los tests. Ambas partes se pueden ver en la captura incluida aquí debajo, o, en su defecto, en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/.github/workflows/python-publish.yml">python-publish.yml</a></em>.</p>
+
+![image](https://github.com/user-attachments/assets/9c36c59f-1a54-4836-8347-9f9804d8615b)
+
+<p align="justify">Dentro de este archivo, descubriremos que nuestro repositorio de GitHub se copia automáticamente a nuestro contenedor si ejecutamos el comando <code>ls -la</code>. El resultado de la ejecución se puede ver aquí debajo.</p>
+
+![image](https://github.com/user-attachments/assets/48eab5cc-e370-421b-bd15-82421a69dce3)
+
+<p align="justify">Y después de haber realizado esto, cada vez que realicemos un push se ejecutará nuestro contenedor y pasará todos los tests que tenemos dentro de <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/test_app.py">test_app.py</a></em>. Con esto y un bizcocho, hemos terminado el segundo hito.</p>
