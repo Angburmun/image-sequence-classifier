@@ -1,4 +1,4 @@
-# Hito 1: Configuración del repositorio.
+# 🔧 Hito 1: Configuración del repositorio 🔧
 
 <p align="justify">Durante la realización de este hito se ha creado el repositorio de GitHub para la aplicación sobre la que desarrollaremos las prácticas de Cloud Computing. La realización de este proceso no es algo trivial ni ha de darse por hecha, ya que lleva varios pasos como lo son la creación del repositorio, la configuración de la terminal para poder acceder al repositorio, y la adición de los archivos al mismo repositorio.</p>
 
