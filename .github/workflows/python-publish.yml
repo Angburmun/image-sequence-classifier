@@ -33,5 +33,7 @@ jobs:
         pip install pytest
         sudo apt install python3-pytest
     - name: Execute tests
-      run: pytest --version
-
+      run: |
+        ls -la
+        pytest --version
+        pytest
