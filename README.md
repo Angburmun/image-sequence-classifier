@@ -1,4 +1,4 @@
-# Clasificador automático de secuencias de imágenes de roedores
+# 🎰 Clasificador automático de secuencias de imágenes de roedores 🐭
 
 Aplicación utilizada para el proyecto 'Automatic detection of rodent behavior'.
 
