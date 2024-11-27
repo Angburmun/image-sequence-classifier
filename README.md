@@ -12,6 +12,10 @@ Aplicación utilizada para el proyecto 'Automatic detection of rodent behavior'.
 
 <p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito2.md">Hito 2</a>, en el que se detalla la realización de los tests y la infraestructura virtual de la aplicación.</p>
 
+## 🔬 Hito 3: Diseño de Microservicios 🔬
+
+<p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito3.md">Hito 3</a>, en el que se detalla la separación de la aplicación en microservicios, y se implementa un sistema de <em>logging</em>.</p>
+
 ## 📂 Disposición de los archivos de la práctica 📂
 
 Aquí debajo viene una explicación de qué son cada uno de los archivos que se encuentran en este repositorio:
