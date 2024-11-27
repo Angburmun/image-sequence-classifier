@@ -1,5 +1,6 @@
 # Variables
 APP=app.py
+TESTS=test_app.py
 
 # Tarea por defecto
 .PHONY: all
@@ -15,6 +16,11 @@ install:
 run:
 	python $(APP)
 
+# Ejecutar pruebas con pytest
+.PHONY: test
+test:
+	pytest $(TESTS)
+
 # Formatear el código con black
 .PHONY: format
 format:
@@ -28,9 +34,4 @@ lint:
 # Limpiar archivos generados
 .PHONY: clean
 clean:
-	rm -rf __pycache__
-
-# Crear un archivo de requerimientos
-.PHONY: freeze
-freeze:
-	pip freeze > requirements.txt
+	rm -rf __pycache__ .pytest_cache
