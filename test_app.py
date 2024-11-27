@@ -19,7 +19,7 @@ def create_test_image(size, format='JPEG'):
 # Verifica que existen los archivos necesarios para que funcione la aplicación
 def test_static_files():
     assert open('app.py').read()
-    assert open('js/script.js').read()
+    assert open('static/script.js').read()
     assert open('static/style.css').read() 
     assert open('templates/index.html').read()
 
