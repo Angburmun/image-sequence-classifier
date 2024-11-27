@@ -14,13 +14,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install keras
-        pip install tensorflow
-        pip install flask
-        pip install pillow
-        pip install pytest
-        sudo apt install python3-pytest
+        make install
     - name: Execute tests
       run: |
-        pytest
+        make test
