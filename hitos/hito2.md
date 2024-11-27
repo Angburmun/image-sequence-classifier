@@ -49,5 +49,9 @@
 <p align="justify">El último paso para terminar este hito es el de utilizar un gestor de tareas como puede ser <em>make</em>. En el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/makefile">makefile</em></a> podemos definir <em>pipelines</em> con las diferentes funcionalidades que queremos implementar. Para este hito he definido dos funcionalidades: <em>run</em> (para ejecutar la aplicación) y <em>test</em> (para ejecutar los tests); además de <em>install</em> (para instalar las dependencias), <em>clean</em> (para limpiar el repositorio), etcétera. Para ejecutarlos solo tenemos que ejecutar la orden <em>make</em> seguida del comando que queramos. Por ejemplo <code>make run</code>.</p>
 
 ![image](https://github.com/user-attachments/assets/99b4dada-9310-4c80-82de-53b24e54dce3)
- 
+
+<p align="justify">Con el gestor de tareas implementado, podemos actualizar nuestro <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/.github/workflows/python-publish.yml">python-publish.yml</a></em> para que ejecute sus acciones a través de la orden <em>make</em>. Esto garantizará que si cambiamos alguno de los archivos <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/makefile">makefile</em></a> o <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/requirements.txt">requirements.txt</em></a>, nuestro GitHub actions también se ejecutará con las nuevas dependencias, o los nuevos tests.</p>
+
+![image](https://github.com/user-attachments/assets/a366ca2a-6b1d-4ea4-907b-538aa026431b)
+
 <p align="justify">Ahora sí que podemos decir que: con esto y un bizcocho, hemos terminado el segundo hito.</p>
