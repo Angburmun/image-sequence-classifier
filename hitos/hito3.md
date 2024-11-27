@@ -1,45 +1,18 @@
-# 🕐 Hito 2: Integración Continua 🕐
+# 🔬 Hito 3: Diseño de Microservicios 🔬
 
-<p align="justify">En este hito se propone crear los tests que comprobarán el correcto funcionamiento de nuestra aplicación, además de su incorporación en una plataforma de integración continua como es GitHub Actions.</p>
+<p align="justify">Durante el desarrollo de este hito se separará la lógica de la aplicación para que sea accesible a través de una API <em>REST</em> y se añadirá un sistema de <em>logs</em> para saber lo que está ocurriendo en el sistema en cada momento.</p>
 
-## Elección de la librería de tests
-<p align="justify">Como primer paso para desarrollar esta práctica, debemos elegir una librería de testing que funcione con el lenguaje de programación de nuestra aplicación. En mi caso, al estar utilizando <em>Python</em>, he decidido utilizar la librería <em>Pytest</em> - también por recomendación de la profesora.</p>
-<p align="justify">La documentación de esta librería se puede consultar en el enlace <em><a href="https://docs.pytest.org/">pytest documentation</a></em>.</p>
+## Diseñando la API <em>REST</em>
+<p align="justify">El hecho de que nuestra aplicación sea accesible a través de una API es muy importante, ya que nos ayuda a que nuestro proyecto sea escalable, fiable y fácilmente depurable. Desacoplando la lógica en diferentes microservicios podemos acceder a cada uno de ellos de manera individual; modificarlos, actualizarlos o incluso eliminarlos no debería afectar al resto del funcionamiento de la aplicación (a no ser que existan dependencias).</p>
+<p align="justify">Por suerte, este proyecto ya se desarrolló con una API <em>REST</em> como eje central desde el comienzo del desarrollo. Los detalles de la API se pueden ver dentro del propio <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/app.py">app.py</a></em>, donde encontramos de primera mano los <em>endpoints</em> que hay abiertos. Las solicitudes <em>POST</em> que realiza el <em>frontend</em> también se pueden visitar en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/static/script.js">script.js</a></em>.</p>
 
-## Desarrollo de los tests
-<p align="justify">Siguiendo las buenas prácticas de programación que se nos han enseñado a lo largo del Grado en Ingeniería Informática, hay varias cosas a tener en cuenta al diseñar tests para nuestra aplicación. Aparte de las técnicas de programación limpia, que ya las damos por supuestas, es importante realizar pruebas de todos los aspectos posibles de nuestra aplicación. Esto nos permitirá tener plena confianza en que el código está funcionando correctamente.</p>
+![image](https://github.com/user-attachments/assets/38e83312-746c-4513-ae60-90239e14d919)
 
-<p align="justify">Recordemos el funcionamiento de la aplicación. Toma una secuencia de 24 imágenes y debe devolver una clasificación para esa secuencia. En caso de no recibir el número adecuado, debe devolver un error. Los detalles de la implementación se pueden ver en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/app.py">app.py</a></em>. Las pruebas que tienen sentido, entonces para nuestra aplicación son las siguientes:</p>
+## Registrando las llamadas del sistema
+<p align="justify">Otro punto importante de este hito es el de desarrollar un sistema efectivo de registro o <em>logging</em>. Con este sistema se pretende mantener en un archivo todo lo que sucede en nuestra aplicación; desde llamadas a los endpoints hasta las respuestas que se dan, incluyendo errores, fallos críticos y otros accesos. Los mensajes de registro y la implementación se encuentran en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/app.py">app.py</a></em>, después de cada uno de los eventos que modifican el estado del sistema.</p>
 
-<ul>
-  <li>Archivos estáticos</li>
-  <li>Ruta principal e <em>index.html</em></li>
-  <li>Predicción de imágenes</li>
-  <ul>
-    <li>Ninguna imagen</li>
-    <li>Pocas imágenes</li>
-    <li>Demasiadas imágenes</li>
-    <li>Imágenes corruptas</li>
-    <li>Imágenes demasiado grandes</li>
-    <li>Imágenes demasiado pequeñas</li>
-  </ul>
-</ul>
+![image](https://github.com/user-attachments/assets/cf392e66-e8e1-4f1e-9c5f-1d4681061b99)
 
-<p align="justify">Los detalles de qué tests se han implementado y cómo se han implementado se pueden ver en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/test_app.py">test_app.py</a></em>. Básicamente <em>pytest</em> crea un pequeño entorno con la aplicación, y prueba de forma independiente los diferentes parámetros que le pedimos. El resultado de la ejecución en local es el siguiente:</p>
+<p align="justify">En esta implementación se ha decidido utilizar la librería estándar <em>logging</em> de <em>python</em>, por contra de los <em>logs</em> que nos proporciona la librería <em>flask</em>. En realidad no es importante cual de las dos utilizar, pero si quisiéramos expandir el sistema con funcionalidad que no es dada por <em>flask</em>, es posible que tuviéramos más problemas para registrar la información existente que con la librería genérica de <em>python</em>.</p>
 
-![image](https://github.com/user-attachments/assets/e5897579-c667-40b4-a282-d683070b7969)
-
-## Integración continua
-<p align="justify">Una vez nos hemos asegurado de que todo funciona correctamente en local, es hora de actualizar nuestro repositorio y configurar el entorno de integración continua. En mi caso he decidido utilizar GitHub Actions porque es muy fácilmente integrable con nuestro repositorio de GitHub. Además de que también contiene muchos entornos <em>Python</em> por defecto que podemos utilizar directamente <em>out of the box</em> con pocos cambios.</p>
-
-![image](https://github.com/user-attachments/assets/1f1b0138-7cb7-41ad-9871-3c83825d1bad)
-
-<p align="justify">En mi caso he uno de los contenedores que había para tenerlo de plantilla, junto con el ejemplo existente en la <em><a href="https://docs.github.com/es/actions/writing-workflows/quickstart">Guía de Inicio Rápido de GitHub Actions</a></em>, para escribir mi contenedor. Una vez hecho esto, y tras entender cómo funcionan los archivos yml, ya se pueden escribir los comandos que queremos que se ejecuten en nuestro contenedor. Se dividen en dos partes principales: las dependencias y el comando para pasar los tests. Ambas partes se pueden ver en la captura incluida aquí debajo, o, en su defecto, en el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/.github/workflows/python-publish.yml">python-publish.yml</a></em>.</p>
-
-![image](https://github.com/user-attachments/assets/9c36c59f-1a54-4836-8347-9f9804d8615b)
-
-<p align="justify">Dentro de este archivo, descubriremos que nuestro repositorio de GitHub se copia automáticamente a nuestro contenedor si ejecutamos el comando <code>ls -la</code>. El resultado de la ejecución se puede ver aquí debajo.</p>
-
-![image](https://github.com/user-attachments/assets/48eab5cc-e370-421b-bd15-82421a69dce3)
-
-<p align="justify">Y después de haber realizado esto, cada vez que realicemos un push se ejecutará nuestro contenedor y pasará todos los tests que tenemos dentro de <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/test_app.py">test_app.py</a></em>. Con esto y un bizcocho, hemos terminado el segundo hito.</p>
+<p align="justify">Gracias a las prácticas de programación que hemos aprendido a lo largo de nuestra vida académica, nos hemos ahorrado trabajo durante el desarrollo de este hito. Explicada la API y el sistema de <em>logging</em>, hemos terminado esta parte.</p>
