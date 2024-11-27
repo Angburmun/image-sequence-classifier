@@ -42,4 +42,12 @@
 
 ![image](https://github.com/user-attachments/assets/48eab5cc-e370-421b-bd15-82421a69dce3)
 
-<p align="justify">Y después de haber realizado esto, cada vez que realicemos un push se ejecutará nuestro contenedor y pasará todos los tests que tenemos dentro de <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/test_app.py">test_app.py</a></em>. Con esto y un bizcocho, hemos terminado el segundo hito.</p>
+<p align="justify">Después de haber realizado esto, cada vez que realicemos un push se ejecutará nuestro contenedor y pasará todos los tests que tenemos dentro de <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/test_app.py">test_app.py</a></em>.</p>
+
+## Gestor de Tareas
+
+<p align="justify">El último paso para terminar este hito es el de utilizar un gestor de tareas como puede ser <em>make</em>. En el archivo <em><a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/makefile">makefile</em></a> podemos definir <em>pipelines</em> con las diferentes funcionalidades que queremos implementar. Para este hito he definido dos funcionalidades: <em>run</em> (para ejecutar la aplicación) y <em>test</em> (para ejecutar los tests); además de <em>install</em> (para instalar las dependencias), <em>clean</em> (para limpiar el repositorio), etcétera. Para ejecutarlos solo tenemos que ejecutar la orden <em>make</em> seguida del comando que queramos. Por ejemplo <code>make run</code>.</p>
+
+![image](https://github.com/user-attachments/assets/99b4dada-9310-4c80-82de-53b24e54dce3)
+ 
+<p align="justify">Ahora sí que podemos decir que: con esto y un bizcocho, hemos terminado el segundo hito.</p>
