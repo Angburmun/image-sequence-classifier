@@ -18,7 +18,11 @@ Aplicación utilizada para el proyecto 'Automatic detection of rodent behavior'.
 
 ## 📦 Hito 4: Composición de Servicios 📦
 
-<p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito4.md">Hito 4</a>, en el que se detalla cómo se ha descrito la composición de los diferentes contenedores que forman la infraestructura utilizando Docker Compose</p>
+<p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito4.md">Hito 4</a>, en el que se detalla cómo se ha descrito la composición de los diferentes contenedores que forman la infraestructura utilizando Docker Compose.</p>
+
+## 🚀 Hito 5: Despliegue de la aplicación en un PaaS 🚀
+
+<p align="justify">En el siguiente enlace se puede consultar la documentación del <a href="https://github.com/Angburmun/image-sequence-classifier/blob/main/hitos/hito5.md">Hito 5</a>, en el que se detalla cómo se ha desplegado la aplicación completa en un servicio de <em>Platform as a Service</em>.</p>
 
 ## 📂 Disposición de los archivos de la práctica 📂
 
