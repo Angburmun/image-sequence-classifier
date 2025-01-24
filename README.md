@@ -33,6 +33,9 @@ Aquí debajo viene una explicación de qué son cada uno de los archivos que se 
    - <p align="justify"><b>.gitignore</b> le dice a <i>git</i> los archivos que no deben estar en el repositorio. Tal y como está explicado en la documentación de la práctica, esto veta archivos binarios o derivados de otros archivos de este repositorio.</p>
    - <p align="justify"><b>app.py</b> tiene todo el código de la aplicación.</p>
    - <p align="justify"><b>test_app.py</b> contiene los tests de la aplicación.</p>
+   - <p align="justify"><b>docker-compose.yaml</b> contiene la estructura de contenedores en los que se divide la aplicación.</p>
+   - <p align="justify"><b>Dockerfile</b> contiene configuraciones para el despliegue de los contenedores.</p>
+   - <p align="justify"><b>requirements.txt</b> contiene las dependencias necesarias que se instalan en los contenedores.</p>
    - <p align="justify">La carpeta <b>templates</b> cuenta con la interfaz html.</p>
    - <p align="justify">La carpeta <b>static</b> tiene la hoja de estilos de la aplicación web.</p>
    - <p align="justify">La carpeta <b>js</b> contiene el FrontEnd de la aplicación.</p>
