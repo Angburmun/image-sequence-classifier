@@ -4,6 +4,12 @@ from io import BytesIO
 from PIL import Image
 import numpy as np
 
+BASE_URL = "http://app:5000"  # Dirección de la red Docker
+
+@pytest.fixture
+def client():
+    return BASE_URL
+
 """ Función auxiliar. 
     Genera una imagen válida para la IA (size, size, 1) en el formato format.
 """

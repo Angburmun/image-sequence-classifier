@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.app
     ports:
       - "5000:5000"
     volumes:
@@ -12,8 +12,33 @@ services:
       - ./logs:/app/logs
     environment:
       - FLASK_ENV=production
+    #depends_on:
+     # - logs
+    networks:
+      - app_net
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+    volumes:
+      - ./logs:/app/logs
     depends_on:
-      - db
+      - app
+    networks:
+      - app_net
+
+  #logs:
+   # build:
+    #  context: .
+     # dockerfile: Dockerfile.logs
+    #volumes:
+     # - ./logs:/fluentd/log
+    #ports:
+    #  - "24224:24224"
+    #  - "24224:24224/udp"
+    #networks:
+    #  - app_net
 
   db:
     image: mysql:8.0
@@ -23,8 +48,13 @@ services:
       MYSQL_DATABASE: app_db
       MYSQL_USER: app_user
       MYSQL_PASSWORD: app_password
+    networks:
+      - app_net
     volumes:
       - db_data:/var/lib/mysql
+
+networks:
+  app_net:
 
 volumes:
   db_data:

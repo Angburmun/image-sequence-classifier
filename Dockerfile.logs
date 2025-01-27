@@ -1,0 +1,11 @@
+# Imagen base de Fluentd
+FROM fluent/fluentd:latest
+
+# Establecer directorio de configuración de Fluentd
+COPY fluent.conf /fluentd/etc/
+
+# Exponer el puerto de Fluentd
+EXPOSE 24224 24224/udp
+
+# Comando por defecto de Fluentd
+CMD ["fluentd", "-c", "/fluentd/etc/fluent.conf", "-vv"]
