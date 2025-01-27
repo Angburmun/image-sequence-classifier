@@ -5,10 +5,15 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copiar los archivos necesarios para ejecutar los tests
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements-tests.txt /app/
+RUN pip install --no-cache-dir -r requirements-tests.txt
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
 
-COPY . /app
+COPY test_app.py /app/
 
-# Comando para ejecutar los tests
-CMD ["pytest"]
+COPY wait-for-app.sh /app/
+RUN chmod +x /app/wait-for-app.sh
+
+
+# Ejecutar los tests cuando el host esté disponible
+CMD ["./wait-for-app.sh", "http://app:5000", "pytest"]
