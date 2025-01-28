@@ -1,4 +1,5 @@
 import logging
+from logging.handlers import SysLogHandler
 from flask import Flask, request, jsonify, render_template
 from tensorflow.keras.models import load_model
 import numpy as np
@@ -6,13 +7,13 @@ from PIL import Image
 
 app = Flask(__name__)
 
-# Configuración de logging
-logging.basicConfig(level=logging.INFO,  # Nivel mínimo para registrar (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-                    format='%(asctime)s - %(levelname)s - %(message)s',  # Formato del log
-                    handlers=[
-                        logging.FileHandler("app.log"),  # Guardar logs en un archivo
-                        logging.StreamHandler()          # Mostrar logs en la consola
-                    ])
+# Configuración de logging para enviar a Fluentd
+fluentd_handler = SysLogHandler(address=('logs', 24224))  # Cambia 'logs' por el nombre del servicio de logs en Docker
+fluentd_handler.setLevel(logging.INFO)
+fluentd_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+
+# Añadir el handler a la configuración del logger
+app.logger.addHandler(fluentd_handler)
 
 # Cargar el modelo entrenado
 model = load_model('models/LSTM.keras')

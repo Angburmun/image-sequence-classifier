@@ -14,4 +14,4 @@ COPY . /app
 EXPOSE 5000
 
 # Comando para ejecutar la aplicación
-CMD ["python", "app-desacoplada.py"]
+CMD ["python", "app.py"]
