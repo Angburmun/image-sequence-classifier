@@ -22,7 +22,7 @@ jobs:
     - name: Build Docker images and start app & logs
       run: |
         docker-compose build
-        docker-compose up logs app
+        docker-compose up logs app -d
     
     - name: Tests
       run: |
