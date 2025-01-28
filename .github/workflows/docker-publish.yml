@@ -19,9 +19,13 @@ jobs:
     - name: Install Docker Compose
       run: sudo apt-get update && sudo apt-get install -y docker-compose
 
-    - name: Build Docker images
+    - name: Build Docker images and start app & logs
       run: |
-        docker-compose up --build
+        docker-compose up --build -d app logs
+    
+    - name: Tests
+      run: |
+        docker-compose up --build tests
 
     - name: Tear down Docker containers
       run: |
