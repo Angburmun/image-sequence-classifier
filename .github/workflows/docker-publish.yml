@@ -29,12 +29,7 @@ jobs:
     - name: Build and push Docker images
       run: |
         docker-compose -f docker-compose.yaml build
-        docker-compose -f docker-compose.yaml up -d
-
-    - name: Wait for app container
-      run: |
-        chmod +x wait-for-app.sh
-        ./wait-for-app.sh http://localhost:5000
+        docker-compose -f docker-compose.yaml up
 
     - name: Run tests
       run: |
