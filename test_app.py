@@ -3,8 +3,11 @@ from io import BytesIO
 from PIL import Image
 import numpy as np
 import requests
+import os
 
-BASE_URL = "http://app:5000"  # Dirección del servicio Flask en la red Docker
+FLASK_ADDR = os.environ.get("FLASK_ADDR", "0.0.0.0")  # Dirección predeterminada: "app"
+FLASK_PORT = os.environ.get("FLASK_PORT", "5000")  # Puerto predeterminado: "5000"
+BASE_URL = f"http://{FLASK_ADDR}:{FLASK_PORT}"
 
 """ Función auxiliar.
     Genera una imagen válida para la IA (size, size, 1) en el formato format.

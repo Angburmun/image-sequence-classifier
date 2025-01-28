@@ -9,8 +9,11 @@ services:
       - ./models:/app/models
       - ./logs:/app/logs
     environment:
-      - FLASK_ENV=production
-      - PORT=5000
+      - FLASK_ENV=${FLASK_ENV}
+      - FLASK_ADDR=${FLASK_ADDR}
+      - FLASK_PORT=${FLASK_PORT}
+      - LOGS_ADDR=${LOGS_ADDR}
+      - LOGS_PORT=${LOGS_PORT}
     depends_on:
       - logs
     networks:
@@ -20,6 +23,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.tests
+    environment:
+      - FLASK_ADDR=${FLASK_ADDR}
+      - FLASK_PORT=${FLASK_PORT}
     volumes:
       - ./logs:/app/logs
     depends_on:

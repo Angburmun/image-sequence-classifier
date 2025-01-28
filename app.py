@@ -7,10 +7,15 @@ from PIL import Image
 import os
 
 app = Flask(__name__)
-port = os.environ.get("PORT", 5000)
+
+flask_addr = os.environ.get("FLASK_ADDR", "0.0.0.0")
+flask_port = os.environ.get("FLASK_PORT", 5000)
+
+logs_addr = os.environ.get("LOGS_ADDR", "0.0.0.0")
+logs_port = os.environ.get("LOGS_PORT", 24224)
 
 # Configuración de logging para enviar a Fluentd
-fluentd_handler = SysLogHandler(address=('logs', 24224))  # Cambia 'logs' por el nombre del servicio de logs en Docker
+fluentd_handler = SysLogHandler(address=(logs_addr, logs_port))  # Cambia 'logs' por el nombre del servicio de logs en Docker
 fluentd_handler.setLevel(logging.INFO)
 fluentd_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
 
@@ -61,4 +66,4 @@ def predict():
 
 if __name__ == '__main__':
     app.logger.info("Iniciando la aplicación Flask en modo debug.")
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host=flask_addr, port=flask_port, debug=True)
