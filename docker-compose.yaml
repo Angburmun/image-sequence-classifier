@@ -31,7 +31,7 @@ services:
       context: .
       dockerfile: Dockerfile.logs
     volumes:
-      - ./logs:/fluentd/log
+      - logs:/fluentd/log
     ports:
       - "24224:24224"
       - "24224:24224/udp"
@@ -41,3 +41,5 @@ services:
 networks:
   app_net:
 
+volumes:
+  logs:

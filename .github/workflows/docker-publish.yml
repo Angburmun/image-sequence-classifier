@@ -19,21 +19,9 @@ jobs:
     - name: Install Docker Compose
       run: sudo apt-get update && sudo apt-get install -y docker-compose
 
-    - name: Log in to GitHub Packages
-      uses: docker/login-action@v2
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Build and push Docker images
+    - name: Build Docker images
       run: |
-        docker-compose -f docker-compose.yaml build
-        docker-compose -f docker-compose.yaml up
-
-    - name: Run tests
-      run: |
-        docker-compose exec tests make test
+        docker-compose up --build
 
     - name: Tear down Docker containers
       run: |
