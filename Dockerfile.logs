@@ -1,5 +1,5 @@
 # Imagen base de Fluentd
-FROM fluent/fluentd:latest
+FROM fluent/fluentd:v1.17-1
 
 # Establecer directorio de configuración de Fluentd
 COPY fluent.conf /fluentd/etc/

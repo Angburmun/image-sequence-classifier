@@ -10,8 +10,8 @@ services:
       - ./logs:/app/logs
     environment:
       - FLASK_ENV=production
-    #depends_on:
-     # - logs
+    depends_on:
+      - logs
     networks:
       - app_net
 
@@ -26,17 +26,17 @@ services:
     networks:
       - app_net
 
-  #logs:
-   # build:
-    #  context: .
-     # dockerfile: Dockerfile.logs
-    #volumes:
-     # - ./logs:/fluentd/log
-    #ports:
-    #  - "24224:24224"
-    #  - "24224:24224/udp"
-    #networks:
-    #  - app_net
+  logs:
+    build:
+      context: .
+      dockerfile: Dockerfile.logs
+    volumes:
+      - ./logs:/fluentd/log
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    networks:
+      - app_net
 
   db:
     image: mysql:8.0

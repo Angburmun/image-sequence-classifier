@@ -9,7 +9,7 @@ COPY requirements-tests.txt /app/
 RUN pip install --no-cache-dir -r requirements-tests.txt
 RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
 
-COPY test_app.py /app/
+COPY test_app-desacoplado.py /app/
 
 COPY wait-for-app.sh /app/
 RUN chmod +x /app/wait-for-app.sh
