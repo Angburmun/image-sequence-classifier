@@ -7,7 +7,7 @@ from PIL import Image
 import os
 
 app = Flask(__name__)
-PORT = os.environ.get('PORT')
+port = os.environ.get("PORT", 5000)
 
 # Configuración de logging para enviar a Fluentd
 fluentd_handler = SysLogHandler(address=('logs', 24224))  # Cambia 'logs' por el nombre del servicio de logs en Docker
@@ -61,4 +61,4 @@ def predict():
 
 if __name__ == '__main__':
     app.logger.info("Iniciando la aplicación Flask en modo debug.")
-    app.run(host='0.0.0.0', port=PORT, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=True)
