@@ -1,0 +1,35 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout del código
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Configurar Docker
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    # 3. Construir los contenedores definidos en docker-compose.yaml
+    - name: Build Docker images
+      run: docker-compose -f docker-compose.yaml build
+
+    # 4. Ejecutar los tests
+    - name: Run tests
+      run: docker-compose run --rm tests
+
+    # 5. Limpiar contenedores e imágenes para liberar espacio
+    - name: Clean up Docker
+      run: docker system prune -f
+
