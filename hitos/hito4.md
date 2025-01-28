@@ -1,6 +1,6 @@
-# 📦 Hito 3: Diseño de Microservicios 📦
+# 📦 Hito 4: Composición de Servicios 📦
 
-<p align="justify">A lo largo de este hito se describirá cómo desacoplar una aplicación monolítica en diferentes servicios para, más tarde, desplegarla en la nube.</p>
+<p align="justify">A lo largo de este hito se describirá cómo desacoplar una aplicación monolítica en diferentes servicios para desplegarla en la nube en futuros hitos. También se describirán las prácticas que se han seguido al orquestrar los servicios con Docker, y buenas prácticas en general a seguir cuando estemos desarrollando los servicios de nuestra aplicación.</p>
 
 ## Desacoplando la aplicación
 <p align="justify">Para poder convertir la aplicación a diferentes servicios, primero tenemos que desacoplar las diferentes funcionalidades que tiene nuestra aplicación. Un buen ejemplo de cómo realizar esto sería separar la lógica de negocio, de la base de datos y del frontend. En mi caso particular, decidí separar la aplicación en tres servicios: la aplicación, logs y tests - sin una base de datos porque no tendría sentido su inclusión.</p>
